@@ -7,9 +7,7 @@
 */
 
 int _printf(const char *format, ...)
-
 {
-
 int no_char = 0;
 va_list argument_list;
 
@@ -18,16 +16,13 @@ return -1;
 
 va_start(argument_list, format);
 
-while(*format)
+while (*format)
 {
-
 if (*format != '%')
-
 {
 write(1, format, 1);
 no_char++;
 }
-
 else
 {
 format++;
@@ -35,20 +30,17 @@ format++;
 if (*format == '\0')
 break;
 
-if (*fomart == '%')
-
+if (*format == '%')
 {
 write(1, format, 1);
 no_char++;
 }
-
 else if (*format == 'c')
 {
 char c = va_arg(argument_list, int);
 write(1, &c, 1);
 no_char++;
 }
-
 else if (*format == 's')
 {
 char *str = va_arg(argument_list, *char);
@@ -65,5 +57,6 @@ format++;
 }
 va_end(argument_list);
 
-return no_char++;
+return no_char;
 }
+
