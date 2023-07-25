@@ -2,7 +2,7 @@
 /**
 *_printf - Printf function
 *@format: format.
-*Return: Printed chars.
+*return: no bytes.
 */
 int _printf(const char *format, ...)
 {
@@ -19,15 +19,13 @@ write(1, format, 1);
 no_char++;
 }
 else
-{
-format++;
+{ format++;
 if (*format == '\0')
 break;
 if (*format == '%')
 {
 write(1, format, 1);
-no_char++;
-}
+no_char++; }
 else if (*format == 'c')
 {
 char c = va_arg(argument_list, int);
