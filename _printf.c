@@ -3,11 +3,10 @@
 /**
 *_printf - Printf function
 *@format: format.
-*return - no_char
+*Return: no_char
 */
 
 int _printf(const char *format, ...)
-
 { int no_char = 0;
 va_list argument_list;
 if (format == NULL)
