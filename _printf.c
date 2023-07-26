@@ -1,17 +1,16 @@
 #include "main.h"
-
 /**
-*_printf - Printf function
-*@format: format.
-*Return: no_char
-*/
-
+ *_printf - Printf function
+ *@format: format.
+ *Return: no_char
+ */
 int _printf(const char *format, ...)
-{ int no_char = 0;
+{
+int no_char = 0;
 va_list argument_list;
 if (format == NULL)
 return (-1);
-va_start(argument_list, format);
+va_start(argument_list, (const char *) format);
 while (*format)
 {
 if (*format != '%')
@@ -38,14 +37,13 @@ str_len++;
 write(1, str, str_len);
 no_char += str_len; }
 else if (*format == 'd' || *format == 'i')
-{ int d = va_arg(argument_list, int);
+{
+int d = va_arg(argument_list, int);
 char buf[10];
 int len = snprintf(buf, sizeof(buf), "%d", d);
 write(1, buf, len);
-no_char += len;
-}
+no_char += len; }
 }
 format++; }
 va_end(argument_list);
-return (no_char);
-}
+return (no_char); }
