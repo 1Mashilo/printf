@@ -1,24 +1,39 @@
- - printf
+# Printf()
 
-group project.
+The `printf` project is a collaboration project by Denis Rands and Mashilo Kgaladi, students of the ALX Software Engineering Programme by Holberton School. This project involves creating a custom `printf` function that imitates the functionality of the standard `printf` function located in the `stdio.h` library. It contains some of the basic features and functions found in the manual 3 of `printf`.
 
-project was done by Denis Randiga,and  Mashilo Kgalagi
+## Function Description
 
-Tasks
+The `_printf()` function is designed to perform formatted output conversion and print data. Its prototype is as follows:
 
-0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
+```c
+int _printf(const char *format, ...)
+format is a string that contains the format specification.
+_printf() is a variadic function, meaning it can receive any number of arguments that replace the format tags written inside the string.
+The format tag has the following prototype:
 
-Write a function that produces output according to a format.
 
-Prototype: int _printf(const char *format, ...);
+%c: Character
+%d or %i: Signed decimal integer
+%s: String of characters
+%b: Signed binary
+%o: Signed octal
+%u: Unsigned integer
+%x: Unsigned hexadecimal
+%X: Unsigned hexadecimal (uppercase)
+%p: Pointer address
+%r: Reverse string of characters
+%R: ROT13 translation of a string
+%S: String with special characters replaced by their ASCII value
+%%: Character
+Flags and Specifiers
++: Prints a plus sign (+) when the argument is a positive number for %i and %d.
+(space): Prints a blank space if the argument is a positive number for %i and %d.
+#: Prints 0, 0x, and 0X for %o, %x, and %X specifiers, respectively. It doesn't print anything if the argument is zero for %o, %x, %X.
+Length Specifiers
+l: Prints a long int or unsigned long int for %i, %d, %o, %u, %x, and %X.
+h: Prints a short int or unsigned short int for %i, %d, %o, %u, %x, and %X.
 
-function handle the following conversion specifiers:
-c
-s
-%
-
-1. Education is when you read the fine print. Experience is what you get if you don't
-
-function handle the following conversion specifiers:
-i
-d
+Authors
+Mashilo Kgaladi 
+Denis Rands
